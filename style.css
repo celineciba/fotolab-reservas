@@ -1,23 +1,25 @@
-* {
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background: #ffffff !important;
+  color: #111111 !important;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: #ffffff;
-  color: #111;
+* {
+  box-sizing: border-box;
 }
 
 .app {
   max-width: 520px;
-  margin: auto;
+  margin: 0 auto;
   padding: 26px 20px 50px;
+  background: #ffffff !important;
 }
 
 .hero {
   min-height: 90vh;
+  background: #ffffff !important;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -30,7 +32,7 @@ body {
 }
 
 .eyebrow {
-  color: #777;
+  color: #555555;
   font-size: 12px;
   letter-spacing: 3px;
   font-weight: 700;
@@ -40,11 +42,11 @@ body {
   font-size: 38px;
   margin: 12px 0;
   font-weight: 900;
-  color: #111;
+  color: #111111;
 }
 
 .subtitle {
-  color: #333;
+  color: #333333;
   font-size: 15px;
 }
 
@@ -58,13 +60,13 @@ body {
 
 .location {
   font-size: 14px;
-  color: #555;
+  color: #555555;
   margin-bottom: 18px;
 }
 
 .main-btn {
   background: #ff1f12;
-  color: #fff;
+  color: #ffffff;
   border: none;
   padding: 16px;
   width: 100%;
@@ -77,7 +79,7 @@ body {
 
 .booking-card {
   margin-top: 30px;
-  background: #ffffff;
+  background: #ffffff !important;
   padding: 24px 20px;
   border-radius: 22px;
   box-shadow: 0 16px 45px rgba(0,0,0,0.10);
@@ -93,10 +95,11 @@ body {
   font-size: 30px;
   margin: 6px 0;
   font-weight: 900;
+  color: #111111;
 }
 
 .section-head p {
-  color: #555;
+  color: #555555;
   font-size: 14px;
 }
 
@@ -105,7 +108,7 @@ label {
   margin-top: 20px;
   margin-bottom: 8px;
   display: block;
-  color: #111;
+  color: #111111;
   font-weight: 800;
 }
 
@@ -115,8 +118,8 @@ input, select, textarea {
   margin-top: 8px;
   border-radius: 14px;
   border: 1px solid #dddddd;
-  background: #fafafa;
-  color: #111;
+  background: #fafafa !important;
+  color: #111111 !important;
   font-size: 15px;
 }
 
@@ -139,12 +142,12 @@ input:focus, select:focus, textarea:focus {
 
 .session-card,
 .extra-card {
-  background: #ffffff;
+  background: #ffffff !important;
   border: 1px solid #dddddd;
   padding: 15px;
   border-radius: 16px;
   cursor: pointer;
-  color: #111;
+  color: #111111 !important;
 }
 
 .session-card {
@@ -166,7 +169,7 @@ input:focus, select:focus, textarea:focus {
 
 .session-card small {
   font-size: 13px;
-  color: #555;
+  color: #555555;
 }
 
 .extra-card {
@@ -184,13 +187,13 @@ input:focus, select:focus, textarea:focus {
 .session-card.active,
 .extra-card.active {
   border: 2px solid #ff1f12;
-  background: #fff3f2;
+  background: #fff3f2 !important;
 }
 
 .total-box {
   margin-top: 22px;
-  background: #111;
-  color: #fff;
+  background: #111111;
+  color: #ffffff;
   padding: 16px;
   border-radius: 16px;
   display: flex;
@@ -200,12 +203,12 @@ input:focus, select:focus, textarea:focus {
 
 .total-box span {
   font-size: 13px;
-  color: #ccc;
+  color: #cccccc;
 }
 
 .total-box small {
   display: block;
-  color: #888;
+  color: #888888;
   margin-top: 3px;
 }
 
@@ -233,7 +236,7 @@ input:focus, select:focus, textarea:focus {
 
 .confirm-card {
   margin-top: 20px;
-  background: #f0fff4;
+  background: #f0fff4 !important;
   border: 1px solid #b7f0c2;
   color: #0f5132;
   padding: 18px;
