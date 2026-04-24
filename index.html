@@ -3,66 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHOTO LAB</title>
+  <title>PHOTO LAB | Reservas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+  <main class="container">
 
-  <h1>PHOTO LAB</h1>
-  <p class="subtitle">Tú tienes el control. Tú tienes el estilo.</p>
+    <section class="hero">
+      <img src="logo.png" alt="PHOTO LAB" class="logo">
 
-  <button id="startBtn">Reservar mi sesión</button>
+      <p class="tagline">Self Photo Studio</p>
+      <h1>Tú tomas las fotos</h1>
+      <p class="subtitle">Tú tienes el control. Tú tienes el estilo.</p>
 
-  <div id="formSection" class="hidden">
+      <p class="location">
+        Laguna Mall, Ibarra · Subsuelo, dentro de la productora de canales digitales
+      </p>
 
-    <h2>Reserva tu sesión</h2>
+      <button id="startBtn">Reservar mi sesión</button>
+    </section>
 
-    <label>Tipo de sesión</label>
-    <select id="tipoSesion">
-      <option value="Individual">Individual - $25</option>
-      <option value="Pareja">Pareja - $35</option>
-      <option value="Grupo">Grupo - $45</option>
-    </select>
+    <section id="formSection" class="form-card hidden">
 
-    <label>Fecha</label>
-    <input type="date" id="fecha">
+      <h2>Reserva tu sesión</h2>
+      <p class="small-text">Completa tus datos y selecciona fecha y hora disponible.</p>
 
-    <label>Hora</label>
-    <input type="time" id="hora">
+      <label>Tipo de sesión</label>
+      <select id="tipoSesion">
+        <option value="Individual">Individual — $25 — 1 persona — 30 minutos</option>
+        <option value="Pareja">Pareja — $35 — 2 personas — 30 minutos</option>
+        <option value="Grupo">Grupo — $45 — 3 a 6 personas — 30 minutos</option>
+      </select>
 
-    <label>Nombre completo</label>
-    <input type="text" id="nombre">
+      <label>Fecha</label>
+      <input type="date" id="fecha">
 
-    <label>Celular</label>
-    <input type="tel" id="celular">
+      <label>Hora</label>
+      <select id="hora">
+        <option value="">Selecciona una hora</option>
+        <option value="09:00">09:00</option>
+        <option value="09:30">09:30</option>
+        <option value="10:00">10:00</option>
+        <option value="10:30">10:30</option>
+        <option value="11:00">11:00</option>
+        <option value="11:30">11:30</option>
+        <option value="12:00">12:00</option>
+        <option value="12:30">12:30</option>
+        <option value="13:00">13:00</option>
+        <option value="13:30">13:30</option>
+        <option value="14:00">14:00</option>
+        <option value="14:30">14:30</option>
+        <option value="15:00">15:00</option>
+        <option value="15:30">15:30</option>
+        <option value="16:00">16:00</option>
+        <option value="16:30">16:30</option>
+        <option value="17:00">17:00</option>
+        <option value="17:30">17:30</option>
+        <option value="18:00">18:00</option>
+        <option value="18:30">18:30</option>
+        <option value="19:00">19:00</option>
+        <option value="19:30">19:30</option>
+        <option value="20:00">20:00</option>
+      </select>
 
-    <label>Instagram</label>
-    <input type="text" id="instagram">
+      <label>Nombre completo</label>
+      <input type="text" id="nombre" placeholder="Ej: Juan Pérez">
 
-    <label>Extras</label>
-    <select id="extras">
-      <option value="Ninguno">Ninguno</option>
-      <option value="+10 minutos">+10 minutos ($10)</option>
-      <option value="Edición básica">Edición básica ($5)</option>
-      <option value="Edición premium">Edición premium ($15)</option>
-      <option value="Videoclip">Videoclip ($10)</option>
-    </select>
+      <label>Celular / WhatsApp</label>
+      <input type="tel" id="celular" placeholder="Ej: 0999999999">
 
-    <label>Código promocional</label>
-    <input type="text" id="codigo">
+      <label>Instagram</label>
+      <input type="text" id="instagram" placeholder="@usuario">
 
-    <button id="enviarBtn">Enviar reserva</button>
+      <label>Extras opcionales</label>
+      <select id="extras">
+        <option value="Ninguno">Ninguno</option>
+        <option value="+10 minutos">+10 minutos — $10</option>
+        <option value="Edición básica">Edición de foto + filtros por foto — $5</option>
+        <option value="Edición premium">Edición premium 5 fotos — $15</option>
+        <option value="Videoclip">Videoclip de sesión 25 segundos — $10</option>
+      </select>
 
-    <p id="mensaje"></p>
+      <label>Código promocional / influencer</label>
+      <input type="text" id="codigo" placeholder="Opcional">
 
-  </div>
+      <label>Observaciones</label>
+      <textarea id="observaciones" placeholder="Opcional"></textarea>
 
-</div>
+      <div class="notice">
+        Debes llegar mínimo 10 minutos antes. Si no llegas a tiempo, puedes perder tu reserva.
+      </div>
 
-<script src="script.js"></script>
+      <button id="enviarBtn">Enviar reserva</button>
+
+      <p id="mensaje"></p>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
