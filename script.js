@@ -1,5 +1,7 @@
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx3f-l4PUpb7pwB1CtCsWLE8SQFM5aTwFzomLX6PHkeUNZFW0LHJRDBxiVYRwa4LCyC7w/exec";
 
+const PREFIX_CODIGO = "PDnB_";
+
 let selectedSession = {
   tipoSesion: "Individual",
   precioBase: 25,
@@ -16,6 +18,7 @@ const formSection = document.getElementById("formSection");
 const enviarBtn = document.getElementById("enviarBtn");
 const mensaje = document.getElementById("mensaje");
 const totalVista = document.getElementById("totalVista");
+const codigoInput = document.getElementById("codigo");
 
 startBtn.addEventListener("click", () => {
   formSection.classList.remove("hidden");
@@ -23,7 +26,6 @@ startBtn.addEventListener("click", () => {
   formSection.scrollIntoView({ behavior: "smooth" });
 });
 
-/* SELECCIÓN SESIÓN */
 document.querySelectorAll(".session-card").forEach(card => {
   card.addEventListener("click", () => {
     document.querySelectorAll(".session-card").forEach(c => c.classList.remove("active"));
@@ -39,7 +41,6 @@ document.querySelectorAll(".session-card").forEach(card => {
   });
 });
 
-/* SELECCIÓN EXTRAS */
 document.querySelectorAll(".extra-card").forEach(card => {
   card.addEventListener("click", () => {
     document.querySelectorAll(".extra-card").forEach(c => c.classList.remove("active"));
@@ -54,15 +55,28 @@ document.querySelectorAll(".extra-card").forEach(card => {
   });
 });
 
-/* TOTAL */
+codigoInput.addEventListener("input", () => {
+  const valor = codigoInput.value.trim();
+
+  if (valor === "") {
+    mensaje.textContent = "";
+    return;
+  }
+
+  if (!PREFIX_CODIGO.startsWith(valor) && !valor.startsWith(PREFIX_CODIGO)) {
+    mensaje.style.color = "#ff1f12";
+    mensaje.textContent = "Código incorrecto o inexistente. Si no tienes código, deja el campo vacío.";
+  } else {
+    mensaje.textContent = "";
+  }
+});
+
 function actualizarTotal() {
   const total = selectedSession.precioBase + selectedExtra.extraPrecio;
   totalVista.textContent = "$" + total;
 }
 
-/* ENVÍO */
 enviarBtn.addEventListener("click", async () => {
-
   const fecha = document.getElementById("fecha").value;
   const hora = document.getElementById("hora").value;
   const nombre = document.getElementById("nombre").value.trim();
@@ -80,6 +94,12 @@ enviarBtn.addEventListener("click", async () => {
   if (celular.replace(/\D/g, "").length < 9) {
     mensaje.style.color = "#ff1f12";
     mensaje.textContent = "Celular inválido.";
+    return;
+  }
+
+  if (codigo !== "" && !codigo.startsWith(PREFIX_CODIGO)) {
+    mensaje.style.color = "#ff1f12";
+    mensaje.textContent = "Código promocional incorrecto o inexistente. Si no tienes un código válido, deja este campo vacío y vuelve a enviar tu reserva.";
     return;
   }
 
