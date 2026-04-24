@@ -2,280 +2,279 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background: #0c0c0c;
-  color: #fff;
+  background: #ffffff;
+  color: #111;
 }
 
 .app {
-  max-width: 500px;
+  max-width: 520px;
   margin: auto;
-  padding: 20px;
+  padding: 26px 20px 50px;
 }
 
-/* HERO */
 .hero {
+  min-height: 90vh;
   text-align: center;
-  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {
-  width: 120px;
-  margin-bottom: 10px;
+  width: 150px;
+  margin: 0 auto 34px;
 }
 
 .eyebrow {
-  color: #999;
+  color: #777;
   font-size: 12px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-weight: 700;
 }
 
 .hero h1 {
-  font-size: 32px;
-  margin: 10px 0;
+  font-size: 38px;
+  margin: 12px 0;
+  font-weight: 900;
+  color: #111;
 }
 
 .subtitle {
-  color: #ccc;
-  font-size: 14px;
+  color: #333;
+  font-size: 15px;
 }
 
 .brand-line {
-  width: 40px;
-  height: 3px;
-  background: #ff3b3b;
-  margin: 15px auto;
+  width: 58px;
+  height: 4px;
+  background: #ff1f12;
+  margin: 20px auto;
+  border-radius: 20px;
 }
 
 .location {
-  font-size: 13px;
-  color: #aaa;
-  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 18px;
 }
 
-/* BOTONES */
 .main-btn {
-  background: #ff3b3b;
-  color: white;
+  background: #ff1f12;
+  color: #fff;
   border: none;
-  padding: 15px;
+  padding: 16px;
   width: 100%;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 14px;
+  font-weight: 900;
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 15px;
-  transition: 0.3s;
+  margin-top: 18px;
 }
 
-.main-btn:hover {
-  background: #ff1f1f;
-}
-
-/* CARD */
 .booking-card {
   margin-top: 30px;
-  background: #121212;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background: #ffffff;
+  padding: 24px 20px;
+  border-radius: 22px;
+  box-shadow: 0 16px 45px rgba(0,0,0,0.10);
+  border: 1px solid #eeeeee;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 22px;
 }
 
 .section-head h2 {
-  margin: 5px 0;
+  font-size: 30px;
+  margin: 6px 0;
+  font-weight: 900;
 }
 
 .section-head p {
-  color: #aaa;
-  font-size: 13px;
-  margin-bottom: 20px;
+  color: #555;
+  font-size: 14px;
 }
 
-/* INPUTS */
 label {
-  font-size: 13px;
-  margin-top: 15px;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 8px;
   display: block;
-  color: #aaa;
+  color: #111;
+  font-weight: 800;
 }
 
 input, select, textarea {
   width: 100%;
-  padding: 12px;
-  margin-top: 5px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background: #1c1c1c;
-  color: white;
+  padding: 15px;
+  margin-top: 8px;
+  border-radius: 14px;
+  border: 1px solid #dddddd;
+  background: #fafafa;
+  color: #111;
+  font-size: 15px;
 }
 
 textarea {
-  resize: none;
+  min-height: 90px;
+  resize: vertical;
 }
 
-/* SESSION CARDS */
-.session-grid {
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #ff1f12;
+  box-shadow: 0 0 0 3px rgba(255,31,18,0.12);
+}
+
+.session-grid,
+.extra-grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 10px;
 }
 
-.session-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  padding: 12px;
-  border-radius: 10px;
+.session-card,
+.extra-card {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 15px;
+  border-radius: 16px;
   cursor: pointer;
+  color: #111;
+}
+
+.session-card {
   text-align: left;
 }
 
 .session-card span {
   display: block;
-  font-size: 13px;
-  color: #aaa;
+  font-size: 15px;
+  font-weight: 900;
 }
 
 .session-card strong {
-  font-size: 18px;
+  display: block;
+  color: #ff1f12;
+  font-size: 22px;
+  margin: 5px 0;
 }
 
 .session-card small {
-  font-size: 11px;
-  color: #777;
-}
-
-.session-card.active {
-  border: 1px solid #ff3b3b;
-  background: #2a0f0f;
-}
-
-/* EXTRAS */
-.extra-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
+  font-size: 13px;
+  color: #555;
 }
 
 .extra-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.extra-card.active {
-  border: 1px solid #ff3b3b;
-  background: #2a0f0f;
-}
-
-/* TOTAL */
-.total-box {
-  margin-top: 20px;
-  background: #1c1c1c;
-  padding: 15px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.total-box span {
-  font-size: 13px;
-  color: #aaa;
-}
-
-.total-box strong {
-  font-size: 20px;
-}
-
-/* NOTICE */
-.notice {
-  margin-top: 15px;
-  font-size: 12px;
-  color: #ffcc00;
-}
-
-/* CONFIRMACION */
-.confirm-card {
-  margin-top: 20px;
-  background: #102015;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.confirm-card strong {
-  display: block;
-  margin-top: 5px;
-}
-
-/* UTIL */
-.hidden {
-  display: none;
-}
-body {
-  background: #ffffff !important;
-  color: #111 !important;
-}
-
-.booking-card {
-  background: #ffffff !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-input, select, textarea {
-  background: #f7f7f7 !important;
-  color: #111 !important;
-  border: 1px solid #ddd !important;
-}
-
-.session-card,
-.extra-card {
-  background: #f7f7f7 !important;
-  border: 1px solid #ddd !important;
+.extra-card span {
+  color: #ff1f12;
+  font-weight: 900;
 }
 
 .session-card.active,
 .extra-card.active {
-  border: 2px solid #ff3b3b !important;
-  background: #fff0f0 !important;
+  border: 2px solid #ff1f12;
+  background: #fff3f2;
 }
 
 .total-box {
-  background: #fafafa !important;
+  margin-top: 22px;
+  background: #111;
+  color: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-box span {
+  font-size: 13px;
+  color: #ccc;
+}
+
+.total-box small {
+  display: block;
+  color: #888;
+  margin-top: 3px;
+}
+
+.total-box strong {
+  font-size: 24px;
+  color: #ff1f12;
 }
 
 .notice {
-  color: #c49a00 !important;
+  margin-top: 16px;
+  padding: 14px;
+  background: #fff8e1;
+  border-left: 4px solid #ff1f12;
+  color: #5c4500;
+  font-size: 13px;
+  border-radius: 10px;
 }
 
-/* CONFIRMACION MEJORADA */
+#mensaje {
+  margin-top: 18px;
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
 .confirm-card {
-  background: #f0fff4 !important;
+  margin-top: 20px;
+  background: #f0fff4;
   border: 1px solid #b7f0c2;
   color: #0f5132;
-  border-radius: 12px;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 1.4;
 }
 
-/* BOTON WHATSAPP PRO */
+.confirm-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.confirm-card strong {
+  display: block;
+  margin-top: 10px;
+  color: #0f5132;
+}
+
+.confirm-card span {
+  display: block;
+  font-weight: 800;
+}
+
+.confirm-note {
+  margin-top: 14px;
+  font-size: 13px;
+}
+
 .whatsapp-btn {
   display: block;
-  margin-top: 15px;
+  margin-top: 16px;
   padding: 14px;
   background: #25D366;
   color: white;
   text-align: center;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 12px;
+  font-weight: 900;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-.whatsapp-btn:hover {
-  background: #1ebe5d;
+.hidden {
+  display: none;
 }
