@@ -218,3 +218,64 @@ textarea {
 .hidden {
   display: none;
 }
+body {
+  background: #ffffff !important;
+  color: #111 !important;
+}
+
+.booking-card {
+  background: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+input, select, textarea {
+  background: #f7f7f7 !important;
+  color: #111 !important;
+  border: 1px solid #ddd !important;
+}
+
+.session-card,
+.extra-card {
+  background: #f7f7f7 !important;
+  border: 1px solid #ddd !important;
+}
+
+.session-card.active,
+.extra-card.active {
+  border: 2px solid #ff3b3b !important;
+  background: #fff0f0 !important;
+}
+
+.total-box {
+  background: #fafafa !important;
+}
+
+.notice {
+  color: #c49a00 !important;
+}
+
+/* CONFIRMACION MEJORADA */
+.confirm-card {
+  background: #f0fff4 !important;
+  border: 1px solid #b7f0c2;
+  color: #0f5132;
+  border-radius: 12px;
+}
+
+/* BOTON WHATSAPP PRO */
+.whatsapp-btn {
+  display: block;
+  margin-top: 15px;
+  padding: 14px;
+  background: #25D366;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
