@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHOTO LAB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>PHOTO LAB</h1>
+  <p class="subtitle">Tú tienes el control. Tú tienes el estilo.</p>
+
+  <button id="startBtn">Reservar mi sesión</button>
+
+  <div id="formSection" class="hidden">
+
+    <h2>Reserva tu sesión</h2>
+
+    <label>Tipo de sesión</label>
+    <select id="tipoSesion">
+      <option value="Individual">Individual - $25</option>
+      <option value="Pareja">Pareja - $35</option>
+      <option value="Grupo">Grupo - $45</option>
+    </select>
+
+    <label>Fecha</label>
+    <input type="date" id="fecha">
+
+    <label>Hora</label>
+    <input type="time" id="hora">
+
+    <label>Nombre completo</label>
+    <input type="text" id="nombre">
+
+    <label>Celular</label>
+    <input type="tel" id="celular">
+
+    <label>Instagram</label>
+    <input type="text" id="instagram">
+
+    <label>Extras</label>
+    <select id="extras">
+      <option value="Ninguno">Ninguno</option>
+      <option value="+10 minutos">+10 minutos ($10)</option>
+      <option value="Edición básica">Edición básica ($5)</option>
+      <option value="Edición premium">Edición premium ($15)</option>
+      <option value="Videoclip">Videoclip ($10)</option>
+    </select>
+
+    <label>Código promocional</label>
+    <input type="text" id="codigo">
+
+    <button id="enviarBtn">Enviar reserva</button>
+
+    <p id="mensaje"></p>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
