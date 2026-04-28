@@ -13,6 +13,22 @@ let selectedExtra = {
   extraPrecio: 0
 };
 
+/* INTRO VIDEO */
+const introVideo = document.getElementById("introVideo");
+const videoIntro = document.getElementById("videoIntro");
+const skipIntroBtn = document.getElementById("skipIntroBtn");
+const mainApp = document.getElementById("mainApp");
+
+function entrarApp() {
+  introVideo.classList.add("hidden");
+  mainApp.classList.remove("hidden");
+}
+
+skipIntroBtn.addEventListener("click", entrarApp);
+
+videoIntro.addEventListener("ended", entrarApp);
+
+/* APP RESERVAS */
 const startBtn = document.getElementById("startBtn");
 const formSection = document.getElementById("formSection");
 const enviarBtn = document.getElementById("enviarBtn");
