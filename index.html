@@ -8,7 +8,20 @@
 </head>
 
 <body>
-  <main class="app">
+
+  <!-- INTRO VIDEO -->
+  <section id="introVideo" class="intro-video">
+    <video id="videoIntro" autoplay muted playsinline>
+      <source src="intro.mp4" type="video/mp4" />
+      Tu navegador no soporta video.
+    </video>
+
+    <button id="skipIntroBtn" class="skip-intro-btn">
+      Acceder
+    </button>
+  </section>
+
+  <main class="app hidden" id="mainApp">
 
     <section class="hero">
       <img src="logo.png" alt="PHOTO LAB" class="logo" />
