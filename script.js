@@ -20,13 +20,16 @@ const skipIntroBtn = document.getElementById("skipIntroBtn");
 const mainApp = document.getElementById("mainApp");
 
 function entrarApp() {
-  introVideo.classList.add("hidden");
   mainApp.classList.remove("hidden");
+  introVideo.classList.add("fade-out");
+
+  setTimeout(() => {
+    introVideo.classList.add("hidden");
+    videoIntro.pause();
+  }, 650);
 }
 
 skipIntroBtn.addEventListener("click", entrarApp);
-
-videoIntro.addEventListener("ended", entrarApp);
 
 /* APP RESERVAS */
 const startBtn = document.getElementById("startBtn");
