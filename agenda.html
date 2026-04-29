@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHOTO LAB | Agenda Privada</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .screen {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 28px 20px 50px;
+    }
+
+    .login {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      width: 145px;
+      margin: 0 auto 28px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: #666;
+      font-weight: 900;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin: 10px 0;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      margin-top: 20px;
+      font-size: 16px;
+      background: #fafafa;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 16px;
+      padding: 16px;
+      border: none;
+      border-radius: 16px;
+      background: #ff1f12;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .error {
+      margin-top: 14px;
+      color: #ff1f12;
+      font-weight: 800;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .top img {
+      width: 92px;
+    }
+
+    .tag {
+      background: #111;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .calendar-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 26px;
+      padding: 20px;
+      box-shadow: 0 16px 45px rgba(0,0,0,0.10);
+    }
+
+    .month-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .month-head button {
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border-radius: 50%;
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .month-title {
+      text-align: center;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .weekdays,
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+
+    .weekdays div {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      color: #777;
+      letter-spacing: 1px;
+    }
+
+    .day {
+      min-height: 62px;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 8px;
+      background: #fafafa;
+      position: relative;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .day.empty {
+      background: transparent;
+      border: none;
+    }
+
+    .day.today {
+      border: 2px solid #ff1f12;
+      background: #fff3f2;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #ff1f12;
+      border-radius: 50%;
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+    }
+
+    .agenda-list {
+      margin-top: 24px;
+    }
+
+    .agenda-title {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .reservation {
+      border: 1px solid #eee;
+      border-radius: 18px;
+      padding: 14px;
+      margin-bottom: 12px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    }
+
+    .reservation strong {
+      display: block;
+      font-size: 16px;
+      color: #111;
+    }
+
+    .reservation span {
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .price {
+      margin-top: 8px;
+      color: #ff1f12 !important;
+      font-weight: 900;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="loginScreen" class="screen login">
+    <img src="logo.png" alt="PHOTO LAB" class="logo" />
+    <p class="eyebrow">ADMINISTRADOR</p>
+    <h1>Agenda privada</h1>
+    <p class="subtitle">
+      Acceso exclusivo para revisar reservas y calendario de PHOTO LAB.
+    </p>
+
+    <input type="password" id="clave" placeholder="Ingresa la clave de acceso" />
+    <button onclick="entrarAgenda()">Ingresar</button>
+    <div id="error" class="error"></div>
+  </section>
+
+  <main id="agendaScreen" class="screen hidden">
+
+    <div class="top">
+      <img src="logo.png" alt="PHOTO LAB" />
+      <span class="tag">AGENDA PRIVADA</span>
+    </div>
+
+    <div class="calendar-card">
+      <div class="month-head">
+        <button onclick="cambiarMes(-1)">‹</button>
+        <div class="month-title" id="monthTitle"></div>
+        <button onclick="cambiarMes(1)">›</button>
+      </div>
+
+      <div class="weekdays">
+        <div>LUN</div>
+        <div>MAR</div>
+        <div>MIÉ</div>
+        <div>JUE</div>
+        <div>VIE</div>
+        <div>SÁB</div>
+        <div>DOM</div>
+      </div>
+
+      <div class="calendar" id="calendar"></div>
+    </div>
+
+    <section class="agenda-list">
+      <div class="agenda-title">Reservas del día</div>
+
+      <div class="reservation">
+        <strong>Ejemplo: María Fernanda</strong>
+        <span>10:30 · Individual · 1 persona</span>
+        <span class="price">$25 · Pendiente</span>
+      </div>
+
+      <div class="reservation">
+        <strong>Ejemplo: Grupo Ana</strong>
+        <span>16:00 · Grupo · 3 a 6 personas</span>
+        <span class="price">$45 · Confirmada</span>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const CLAVE_ADMIN = "PHOTOADMIN2026";
+
+    const loginScreen = document.getElementById("loginScreen");
+    const agendaScreen = document.getElementById("agendaScreen");
+    const error = document.getElementById("error");
+    const calendar = document.getElementById("calendar");
+    const monthTitle = document.getElementById("monthTitle");
+
+    let fechaActual = new Date();
+
+    function entrarAgenda() {
+      const clave = document.getElementById("clave").value.trim();
+
+      if (clave !== CLAVE_ADMIN) {
+        error.textContent = "Clave incorrecta.";
+        return;
+      }
+
+      loginScreen.classList.add("hidden");
+      agendaScreen.classList.remove("hidden");
+      renderCalendar();
+    }
+
+    function cambiarMes(valor) {
+      fechaActual.setMonth(fechaActual.getMonth() + valor);
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      calendar.innerHTML = "";
+
+      const year = fechaActual.getFullYear();
+      const month = fechaActual.getMonth();
+
+      const meses = [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+      ];
+
+      monthTitle.textContent = `${meses[month]} ${year}`;
+
+      const primerDia = new Date(year, month, 1);
+      const ultimoDia = new Date(year, month + 1, 0);
+      let inicioSemana = primerDia.getDay();
+
+      inicioSemana = inicioSemana === 0 ? 6 : inicioSemana - 1;
+
+      for (let i = 0; i < inicioSemana; i++) {
+        const empty = document.createElement("div");
+        empty.className = "day empty";
+        calendar.appendChild(empty);
+      }
+
+      const hoy = new Date();
+
+      for (let dia = 1; dia <= ultimoDia.getDate(); dia++) {
+        const day = document.createElement("div");
+        day.className = "day";
+        day.textContent = dia;
+
+        const esHoy =
+          dia === hoy.getDate() &&
+          month === hoy.getMonth() &&
+          year === hoy.getFullYear();
+
+        if (esHoy) {
+          day.classList.add("today");
+        }
+
+        if (dia === 8 || dia === 15 || dia === 22) {
+          const dot = document.createElement("div");
+          dot.className = "dot";
+          day.appendChild(dot);
+        }
+
+        calendar.appendChild(day);
+      }
+    }
+  </script>
+
+</body>
+</html>
